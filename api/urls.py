@@ -2,6 +2,7 @@ from django.urls import include, path
 from rest_auth.views import PasswordResetConfirmView, PasswordResetView
 from . import views
 
+
 urlpatterns = [
     path('users/', include('users.urls')),
     path('auth/', include('rest_auth.urls')),
