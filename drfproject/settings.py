@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-qc*6yqpoc6%qdq0qe-%vj#)=6h3))cb7ama)9c!rr_&6*hoc!q'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["restapidjangoproject.herokuapp.com", "127.0.0.1", "localhost"]
 
 # Application definition
 
@@ -58,7 +58,7 @@ AUTHENTICATION_BACKENDS = [
     # "allauth.account.auth_backends.AuthenticationBackend",
 ]
 
-ADMIN_URL = r"^famin-admin/"
+# ADMIN_URL = r"^famin-admin/"
 
 # django-rest-auth
 # ------------------------------------------------------------------------------
@@ -164,6 +164,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+STATICFILES_DIRS = [
+    BASE_DIR / "static", 
+]
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
