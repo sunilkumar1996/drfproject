@@ -11,5 +11,5 @@ def example_view(request, format=None):
     content = {
         'status': 'request was permitted'
     }
-    return Response(content)
+    return Response(content, status=status.HTTP_200_OK)
 

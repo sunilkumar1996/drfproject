@@ -16,11 +16,27 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 # from drfproject import settings
+# from rest_framework.schemas import get_schema_view
+# from rest_framework_swagger.renderers import SwaggerUIRenderer, OpenAPIRenderer
+from drf_yasg import openapi
+from drf_yasg.views import get_schema_view
+from rest_framework import permissions
+
 
 # from django.conf import settings
 # from django.conf.urls.static import static
+schema_view = get_schema_view(
+    openapi.Info(
+        title="FAM-in API",
+        default_version="v1",
+        description="The internal API used by FAM-in",
+    ),
+    public=True,
+    permission_classes=(permissions.AllowAny,),
+)
 
 urlpatterns = [
+    path("api/swagger/", schema_view.with_ui("swagger", cache_timeout=None), name="schema-swagger-ui"),
     path('admin/', admin.site.urls),
     path('api/v1/', include('api.urls')),
 ] 

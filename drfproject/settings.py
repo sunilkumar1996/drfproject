@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-qc*6yqpoc6%qdq0qe-%vj#)=6h3))cb7ama)9c!rr_&6*hoc!q'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["restapidjangoproject.herokuapp.com", "127.0.0.1", "localhost"]
 
@@ -44,19 +44,23 @@ INSTALLED_APPS = [
     ###########################
     'users',
     'api',
+    # 'rest_framework_swagger',
+    'drf_yasg',
 ]
 
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.TokenAuthentication',  # <-- And here
+        "rest_framework.authentication.SessionAuthentication",
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',
     ],
 }
 
-AUTHENTICATION_BACKENDS = [
-    "django.contrib.auth.backends.ModelBackend",
-    # "allauth.account.auth_backends.AuthenticationBackend",
-]
+# AUTHENTICATION_BACKENDS = [
+#     "django.contrib.auth.backends.ModelBackend",
+#     # "allauth.account.auth_backends.AuthenticationBackend",
+# ]
 
 # ADMIN_URL = r"^famin-admin/"
 
