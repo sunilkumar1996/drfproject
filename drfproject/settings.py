@@ -26,6 +26,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     ############################
     'rest_framework',
+    'django_rest_passwordreset',
     'rest_framework.authtoken',
     'rest_auth',
     'rest_auth.registration',
@@ -149,5 +150,6 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'pythonteamdev@gmail.com'
-EMAIL_HOST_PASSWORD = ""
+EMAIL_HOST_PASSWORD = "Qwerty@123"
 EMAIL_PORT = 587
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
