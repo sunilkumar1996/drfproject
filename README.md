@@ -9,13 +9,13 @@
 
 ### firstly  create a virtualenv and install Django
 
-`
+```
     python3.8 -m venv env_name
     . env_name/bin/activate
     pip install --upgrade pip
     pip install -r requirement.txt
 
-`
+```
 
 ### Run the Project 
 
